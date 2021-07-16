@@ -156,6 +156,66 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/07/16/ip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F13223991311%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1628928275&t=77efab54abacdc9dc3a45b021a644739">
+      <meta itemprop="name" content="octopus">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Octopus's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/16/ip/" class="post-title-link" itemprop="url">bjdctf2020 ip</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-16 15:10:46 / 修改时间：15:11:41" itemprop="dateCreated datePublished" datetime="2021-07-16T15:10:46+08:00">2021-07-16</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://img-blog.csdnimg.cn/20210609210704902.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3OTQwNDY2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210609210708684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3OTQwNDY2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">打开  flag  burpsiute    一下<br><img src="https://img-blog.csdnimg.cn/20210609210704974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3OTQwNDY2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">客户端请求头，XFF和client-ip都可。发现可以控制输入<br><img src="https://img-blog.csdnimg.cn/20210609211006141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3OTQwNDY2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述">尝试系统命令client-ip:{system(‘ls’)}发现可以，尝试cat /flag,没有任何过滤</p>
+<p><img src="https://img-blog.csdnimg.cn/20210609211215913.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ3OTQwNDY2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/07/16/CTF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -359,7 +419,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
